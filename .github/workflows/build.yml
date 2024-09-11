@@ -86,4 +86,4 @@ jobs:
         automatic_release_tag: ${{ env.TAG_NAME }} 
         title: "MicroPython + ST7789 Display Driver Release for version ${{ env.TAG_NAME }}"
         files: ./artifacts/*
-        body_path: ./release_notes.md
+        body_path: $GITHUB_WORKSPACE/release_notes.md
