@@ -39,6 +39,17 @@ make
 
 Note: If make user line fail, change ``../../../`` for the full path, example: ``/home/your_user/st7789_mpy/st7789/micropython.cmake``.
 
+## How to Flash the Firmware
+### Windows, Linux:
+          1. Download the .uf2 file from the release.
+          2. Press and hold the BOOT button on the RP2040 and press RESET button or connect it to your computer via USB.
+          3. Release the button. The RP2040  will appear as a removable drive.
+          4. Drag and drop the .uf2 file onto the drive..
+          5. The RP2040 will reboot and run MicroPython..
+
+## Examples Usage
+Please use the examples located in the [examples folder of the st7789_mpy repository](https://github.com/russhughes/st7789_mpy/tree/master/examples).
+
 #### The results will be in:
 ``micropython/ports/rp2/build-RPI_PICO/firmare.uf2``
 
