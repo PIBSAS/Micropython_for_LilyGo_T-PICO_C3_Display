@@ -42,7 +42,7 @@ jobs:
 
     - name: Copy wifespat.py like frozen module
       run: |
-        cp $GITHUB_WORKSPACE/wifiespat.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+        cp $GITHUB_WORKSPACE/wifiespat.py $GITHUB_WORKSPACE/micropython/ports/rp2/modules/
     
     - name: Install dependencies
       run: |
