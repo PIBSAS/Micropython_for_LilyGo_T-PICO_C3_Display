@@ -37,12 +37,12 @@ jobs:
        cp $GITHUB_WORKSPACE/st7789_mpy/fonts/truetype/*.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
        cp $GITHUB_WORKSPACE/st7789_mpy/fonts/bitmap/*.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
 
-    - name: Clone Pico-ESP01-MP
-      run: git clone https://github.com/heggiedavid/PIco-ESP01-MP.git
+    - name: Clone repo
+      uses: actions/checkout@v3
 
     - name: Copy esp.py like frozen module
       run: |
-        cp "$GITHUB_WORKSPACE/PIco-ESP01-MP/esp.py" "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+        cp wifiespat.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
     
     - name: Install dependencies
       run: |
