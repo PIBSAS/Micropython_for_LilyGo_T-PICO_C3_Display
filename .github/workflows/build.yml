@@ -55,21 +55,7 @@ jobs:
       run: |
         mkdir -p ./artifacts
         cp micropython/ports/rp2/build-RPI_PICO/*.uf2 ./artifacts/RP2040.uf2
-
-    - name: Release Changelog Builder
-      uses: mikepenz/release-changelog-builder-action@v5
-      id: changelog
-      with:
-        changelogTitle: "Changelog"
-        base: "v"
-        types: |
-          - type: "feat"
-            section: "Features"
-          - type: "fix"
-            section: "Bug Fixes"
-          - type: "docs"
-            section: "Documentation"
-                
+            
     - name: Generate Tag
       id: tag
       run: echo "TAG_NAME=release-$(date +'%Y%m%d-%H%M')" >> $GITHUB_ENV
@@ -85,7 +71,6 @@ jobs:
           ## Release Version: ${{ env.TAG_NAME }}
 
           ### Changelog
-          ${{ steps.changelog.outputs.changelog }}
 
           ## How to Flash the Firmware
           ### Windows:
