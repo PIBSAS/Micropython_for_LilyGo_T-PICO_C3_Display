@@ -31,15 +31,15 @@ jobs:
 
     - name: Copy tdt_config and some fonts like frozen modules
       run: |
-       cp "$GITHUB_WORKSPACE/st7789_mpy/examples/configs/t-picoc3/tft_config.py"
-       cp "$GITHUB_WORKSPACE/st7789_mpy/examples/configs/tdisplay_rp2040/tft_buttons.py"
-       cp $GITHUB_WORKSPACE/st7789_mpy/examples/chango/chango.py
-       cp $GITHUB_WORKSPACE/st7789_mpy/examples/chango/chango16.py
-       cp $GITHUB_WORKSPACE/st7789_mpy/examples/chango/chango32.py
-       cp $GITHUB_WORKSPACE/st7789_mpy/examples/chango/chango64.py
-       cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/*.py
-       cp $GITHUB_WORKSPACE/st7789_mpy/fonts/truetype/*.py
-       cp $GITHUB_WORKSPACE/st7789_mpy/fonts/bitmap/*.py
+       cp "$GITHUB_WORKSPACE/st7789_mpy/examples/configs/t-picoc3/tft_config.py" "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       cp "$GITHUB_WORKSPACE/st7789_mpy/examples/configs/tdisplay_rp2040/tft_buttons.py" "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       cp $GITHUB_WORKSPACE/st7789_mpy/examples/chango/chango.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       cp $GITHUB_WORKSPACE/st7789_mpy/examples/chango/chango16.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       cp $GITHUB_WORKSPACE/st7789_mpy/examples/chango/chango32.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       cp $GITHUB_WORKSPACE/st7789_mpy/examples/chango/chango64.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/*.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       cp $GITHUB_WORKSPACE/st7789_mpy/fonts/truetype/*.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       cp $GITHUB_WORKSPACE/st7789_mpy/fonts/bitmap/*.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
 
     - name: Build MicroPython for RP2040
       run: |
