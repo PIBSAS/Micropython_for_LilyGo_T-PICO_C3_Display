@@ -1,17 +1,12 @@
-name: T-Display-C3
+name: T-Display-Pico C3
 
 permissions:
   contents: write
 
 on:
   push:
-  #  branches:
-   #   - main
     tags:
      - 'v*'
-  #pull_request:
-   # branches:
-    #  - main
   schedule:
      - cron: '0 0 * * 0'  # Se ejecutará a las 00:00 UTC cada domingo
   
@@ -22,16 +17,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Clonar el repositorio
-      uses: actions/checkout@v3
       
-    - name: Clonar Micropython
+    - name: Clone Micropython
       run: git clone --recurse-submodules https://github.com/micropython/micropython.git
 
-    - name: Clonar st7789
+    - name: Clone st7789_mpy
       run: git clone https://github.com/russhughes/st7789_mpy.git
           
-    - name: Instalar dependencias
+    - name: Install dependencies
       run: |
        sudo apt-get update
        sudo apt-get install -y gcc-arm-none-eabi libssl-dev python3 python3-pip python3-venv build-essential libffi-dev git pkg-config
@@ -60,6 +53,6 @@ jobs:
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         prerelease: false
-        automatic_release_tag: ${{ env.TAG_NAME }}  # Usa el nombre del tag generado
+        automatic_release_tag: ${{ env.TAG_NAME }} 
         title: "Release for version ${{ env.TAG_NAME }}"
         files: ./artifacts/*
