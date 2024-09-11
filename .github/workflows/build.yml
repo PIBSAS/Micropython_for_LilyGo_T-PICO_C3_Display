@@ -36,8 +36,8 @@ jobs:
        cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/*.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
        cp $GITHUB_WORKSPACE/st7789_mpy/fonts/truetype/*.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
        cp $GITHUB_WORKSPACE/st7789_mpy/fonts/bitmap/*.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
-       cp "$GITHUB_WORKSPACE/st7789_mpy/examples/clock/*.py" "$GITHUB_WORKSPACE/micropython/examples/rp2/"
-       cp "$GITHUB_WORKSPACE/st7789_mpy/examples/clock/clock_240x135/*" "$GITHUB_WORKSPACE/micropython/examples/rp2/"
+       cp $GITHUB_WORKSPACE/st7789_mpy/examples/clock/*.py "$GITHUB_WORKSPACE/micropython/examples/rp2/"
+       cp $GITHUB_WORKSPACE/st7789_mpy/examples/clock/clock_240x135/* "$GITHUB_WORKSPACE/micropython/examples/rp2/"
        
     - name: Install dependencies
       run: |
