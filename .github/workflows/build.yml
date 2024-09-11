@@ -29,9 +29,9 @@ jobs:
        ls -R $GITHUB_WORKSPACE/st7789_mpy/
        cp "$GITHUB_WORKSPACE/st7789_mpy/examples/configs/tdisplay_rp2040/tft_buttons.py" "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
        cp $GITHUB_WORKSPACE/st7789_mpy/examples/chango/chango.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
-       cp $GITHUB_WORKSPACE/st7789_mpy/examples/chango/chango16.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
-       cp $GITHUB_WORKSPACE/st7789_mpy/examples/chango/chango32.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
-       cp $GITHUB_WORKSPACE/st7789_mpy/examples/chango/chango64.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       cp $GITHUB_WORKSPACE/st7789_mpy/examples/chango/chango_16.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       cp $GITHUB_WORKSPACE/st7789_mpy/examples/chango/chango_32.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       cp $GITHUB_WORKSPACE/st7789_mpy/examples/chango/chango_64.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
        cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/*.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
        cp $GITHUB_WORKSPACE/st7789_mpy/fonts/truetype/*.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
        cp $GITHUB_WORKSPACE/st7789_mpy/fonts/bitmap/*.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
