@@ -31,8 +31,7 @@ jobs:
 
     - name: Copy tdt_config and some fonts like frozen modules
       run: |
-       ls -R $GITHUB_WORKSPACE
-       cp "$GITHUB_WORKSPACE/st7789_mpy/examples/configs/t-picoc3/tft_config.py" "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       ls -R $GITHUB_WORKSPACE/st7789_mpy/
        cp "$GITHUB_WORKSPACE/st7789_mpy/examples/configs/tdisplay_rp2040/tft_buttons.py" "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
        cp $GITHUB_WORKSPACE/st7789_mpy/examples/chango/chango.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
        cp $GITHUB_WORKSPACE/st7789_mpy/examples/chango/chango16.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
