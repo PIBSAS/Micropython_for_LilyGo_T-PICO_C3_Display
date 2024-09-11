@@ -8,18 +8,17 @@ on:
     tags:
      - 'v*'
   schedule:
-     - cron: '0 0 * * 0'  # Se ejecutará a las 00:00 UTC cada domingo
+     - cron: '0 0 * * 0'
   
-  workflow_dispatch:  # Permite ejecutar manualmente el flujo de trabajo
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-
-    #- name: Clone repo
-     # uses: actions/checkout@v3
+    - name: Clone repo
+      uses: actions/checkout@v3
 
     - name: Clone Micropython
       run: git clone --recurse-submodules https://github.com/micropython/micropython.git
@@ -36,13 +35,51 @@ jobs:
        cp $GITHUB_WORKSPACE/st7789_mpy/examples/chango/chango_16.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
        cp $GITHUB_WORKSPACE/st7789_mpy/examples/chango/chango_32.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
        cp $GITHUB_WORKSPACE/st7789_mpy/examples/chango/chango_64.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
-       cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/*.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
-       cp $GITHUB_WORKSPACE/st7789_mpy/fonts/truetype/*.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
-       cp $GITHUB_WORKSPACE/st7789_mpy/fonts/bitmap/*.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
-
-    #- name: Copy wifespat.py like frozen module
-     # run: |
-      #  cp $GITHUB_WORKSPACE/wifiespat.py $GITHUB_WORKSPACE/micropython/ports/rp2/modules/
+       cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/astrol.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/gotheng.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/greekc.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/italict.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/lowmat.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/marker.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/music.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/romancs.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       cp $GITHUB_WORKSPACE/st7789_mpy/fonts/bitmap/vga1_8x8.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       cp $GITHUB_WORKSPACE/st7789_mpy/fonts/bitmap/vga1_8x16.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       cp $GITHUB_WORKSPACE/st7789_mpy/fonts/bitmap/vga1_16x16.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       cp $GITHUB_WORKSPACE/st7789_mpy/fonts/bitmap/vga1_16x32.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       cp $GITHUB_WORKSPACE/st7789_mpy/fonts/bitmap/vga1_bold_16x16.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       cp $GITHUB_WORKSPACE/st7789_mpy/fonts/bitmap/vga1_bold_16x32.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       cp $GITHUB_WORKSPACE/st7789_mpy/fonts/truetype/NotoSerif_32.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+      # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/truetype/NotoSans_32.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+      # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/truetype/NotoSansMono_32.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+      # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/bitmap/vga2_8x8.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+      # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/bitmap/vga2_8x16.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+      # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/bitmap/vga2_16x16.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+      # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/bitmap/vga2_16x32.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+      # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/bitmap/vga2_bold_16x16.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+      # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/bitmap/vga2_bold_16x32.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+      # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/cyrilc.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+      # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/gothger.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+      # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/gothita.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+      # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/greekcs.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+      # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/greekp.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+      # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/greeks.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+      # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/italcc.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+      # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/italiccs.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+      # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/meteo.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+      # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/romanc.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+      # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/romand.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+      # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/romanp.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+      # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/romans.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+      # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/romant.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+      # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/scriptc.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+      # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/scripts.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+      # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/symbol.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+      # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/uppmat.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       
+    - name: Copy wifespat.py like frozen module
+      run: |
+        cp $GITHUB_WORKSPACE/wifiespat.py $GITHUB_WORKSPACE/micropython/ports/rp2/modules/
 
     - name: Install dependencies
       run: |
