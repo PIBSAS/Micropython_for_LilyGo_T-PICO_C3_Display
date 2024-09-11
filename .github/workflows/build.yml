@@ -23,11 +23,6 @@ jobs:
 
     - name: Clone st7789_mpy
       run: git clone https://github.com/russhughes/st7789_mpy.git
-          
-    - name: Install dependencies
-      run: |
-       sudo apt-get update
-       sudo apt-get install -y gcc-arm-none-eabi libssl-dev python3 python3-pip python3-venv build-essential libffi-dev git pkg-config
 
     - name: Copy tdt_config and some fonts like frozen modules
       run: |
@@ -40,6 +35,11 @@ jobs:
        cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/*.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
        cp $GITHUB_WORKSPACE/st7789_mpy/fonts/truetype/*.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
        cp $GITHUB_WORKSPACE/st7789_mpy/fonts/bitmap/*.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+       
+    - name: Install dependencies
+      run: |
+       sudo apt-get update
+       sudo apt-get install -y gcc-arm-none-eabi libssl-dev python3 python3-pip python3-venv build-essential libffi-dev git pkg-config
 
     - name: Build MicroPython for RP2040
       run: |
