@@ -17,10 +17,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-   # - name: Clone repo
-    #  uses: actions/checkout@v3
-    - name: Clone Pico-ESP01-MP
-      run: git clone https://github.com/heggiedavid/PIco-ESP01-MP.git
+    - name: Clone repo
+      uses: actions/checkout@v3
+    #- name: Clone Pico-ESP01-MP
+     # run: git clone https://github.com/heggiedavid/PIco-ESP01-MP.git
       
     - name: Clone Micropython
       run: git clone --recurse-submodules https://github.com/micropython/micropython.git
@@ -79,13 +79,13 @@ jobs:
       # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/symbol.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
       # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/vector/uppmat.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
        
-    #- name: Copy wifespat.py like frozen module
-    #  run: |
-    #    cp $GITHUB_WORKSPACE/wifiespat.py $GITHUB_WORKSPACE/micropython/ports/rp2/modules/
-
-    - name: Copy esp.py module
+    - name: Copy TPicoESPC3 like frozen module
       run: |
-        cp "$GITHUB_WORKSPACE/PIco-ESP01-MP/esp.py" $GITHUB_WORKSPACE/micropython/ports/rp2/modules/
+        cp $GITHUB_WORKSPACE/TPicoESPC3.py $GITHUB_WORKSPACE/micropython/ports/rp2/modules/
+
+    #- name: Copy esp.py module
+     # run: |
+      #  cp "$GITHUB_WORKSPACE/PIco-ESP01-MP/esp.py" $GITHUB_WORKSPACE/micropython/ports/rp2/modules/
     
     - name: Install dependencies
       run: |
