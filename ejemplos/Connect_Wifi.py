@@ -12,8 +12,8 @@ esp = ESPC3()
 
 # Configuración de las credenciales Wi-Fi
 secrets = {
-    "ssid": "TELWINET:9E-5E_EXT",
-    "password": "68297640"
+    "ssid": "WIFI",
+    "password": "CREDENTIAL"
 }
 
 # Intentar conectar a la red Wi-Fi
