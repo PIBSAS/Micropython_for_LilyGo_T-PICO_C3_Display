@@ -28,12 +28,14 @@ jobs:
     - name: Clone st7789_mpy
       run: git clone https://github.com/russhughes/st7789_mpy.git
 
+    - name: Clone TPicoESPC3
+      run: git clone https://github.com/PIBSAS/TPicoESPC3.git
+
     - name: Copy tdt_config and some fonts like frozen modules
       run: |
        ls -R $GITHUB_WORKSPACE/st7789_mpy/
        cp "$GITHUB_WORKSPACE/st7789_mpy/examples/configs/t-picoc3/tft_config.py" "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
        cp "$GITHUB_WORKSPACE/st7789_mpy/examples/configs/tdisplay_rp2040/tft_buttons.py" "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
-       cp $GITHUB_WORKSPACE/st7789_mpy/examples/chango/chango.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
        cp $GITHUB_WORKSPACE/st7789_mpy/examples/chango/chango_16.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
        cp $GITHUB_WORKSPACE/st7789_mpy/examples/chango/chango_32.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
        cp $GITHUB_WORKSPACE/st7789_mpy/examples/chango/chango_64.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
@@ -52,6 +54,7 @@ jobs:
        cp $GITHUB_WORKSPACE/st7789_mpy/fonts/bitmap/vga1_bold_16x16.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
        cp $GITHUB_WORKSPACE/st7789_mpy/fonts/bitmap/vga1_bold_16x32.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
        cp $GITHUB_WORKSPACE/st7789_mpy/fonts/truetype/NotoSerif_32.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
+      # cp $GITHUB_WORKSPACE/st7789_mpy/examples/chango/chango.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
       # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/truetype/NotoSans_32.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
       # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/truetype/NotoSansMono_32.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
       # cp $GITHUB_WORKSPACE/st7789_mpy/fonts/bitmap/vga2_8x8.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
@@ -81,7 +84,7 @@ jobs:
        
     - name: Copy TPicoESPC3 like frozen module
       run: |
-        cp $GITHUB_WORKSPACE/TPicoESPC3.py $GITHUB_WORKSPACE/micropython/ports/rp2/modules/
+        cp $GITHUB_WORKSPACE/TPicoESPC3/TPicoESPC3.py $GITHUB_WORKSPACE/micropython/ports/rp2/modules/
 
     #- name: Copy esp.py module
      # run: |
