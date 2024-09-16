@@ -6,7 +6,7 @@ import time
 esp = ESPC3(debug=True)
 
 # Conectar a Wi-Fi
-esp.send('AT+CWJAP="TELWINET:9E-5E_EXT","68297640"')
+esp.send('AT+CWJAP="YOUR_WIFI","CREDENTIAL"')
 
 # Configurar el ESP32-C3 como servidor
 esp.send('AT+CIPMUX=1')  # Habilitar múltiples conexiones
