@@ -23,8 +23,8 @@ button_2 = Pin(7, Pin.IN, Pin.PULL_UP)
 
 # Configuración de las credenciales Wi-Fi
 secrets = {
-    "ssid": "TELWINET:9E-5E_EXT",
-    "password": "68297640"
+    "ssid": "YOR_WIFI",
+    "password": "YOUR_CREDENTIAL"
 }
 
 # Function to display text on the screen
