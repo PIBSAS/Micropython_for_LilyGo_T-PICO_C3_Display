@@ -3,8 +3,8 @@ from TPicoESPC3 import ESPC3
 import time
 
 # Definir el SSID y la contraseña de la red Wi-Fi
-ssid = "TELWINET:9E-5E_EXT"
-password = "68297640"
+ssid = "SSID"
+password = "PASS"
 
 # Inicializar el módulo ESP32C3
 esp = ESPC3(uart_id=1, tx_pin=8, rx_pin=9, debug=True)
