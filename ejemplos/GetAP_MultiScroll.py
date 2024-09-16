@@ -68,4 +68,5 @@ try:
     
 except Exception as e:
     print("Error al obtener puntos de acceso:", e)
+    tft.text(font, f"Error al conectarse a la red Wi-Fi: {e}",0,100)
 
