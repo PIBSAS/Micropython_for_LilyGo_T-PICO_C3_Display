@@ -9,8 +9,8 @@ tft = config(3)
 tft.init()
 
 # Definir el SSID y la contraseña de la red Wi-Fi
-ssid = "TELWINET:9E-5E_EXT"
-password = "68297640"
+ssid = "WIFI"
+password = "CREDENTIAL"
 
 # Inicializar el módulo ESP32C3
 esp = ESPC3()
