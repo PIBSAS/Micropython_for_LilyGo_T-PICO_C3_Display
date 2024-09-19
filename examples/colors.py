@@ -1,0 +1,21 @@
+import st7789, tft_config, time
+
+tft =tft_config.config(1)
+tft.init()
+for i in range(8):
+    tft.fill(st7789.RED)
+    time.sleep(1)
+    tft.fill(st7789.GREEN)
+    time.sleep(1)
+    tft.fill(st7789.BLACK)
+    time.sleep(1)
+    tft.fill(st7789.BLUE)
+    time.sleep(1)
+    tft.fill(st7789.WHITE)
+    time.sleep(1)
+    tft.fill(st7789.MAGENTA)
+    time.sleep(1)
+    tft.fill(st7789.CYAN)
+    time.sleep(1)
+    tft.fill(st7789.YELLOW)
+    time.sleep(1)
