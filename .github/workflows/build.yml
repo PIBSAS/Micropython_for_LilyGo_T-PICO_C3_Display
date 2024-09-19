@@ -19,8 +19,6 @@ jobs:
     steps:
     - name: Clone repo
       uses: actions/checkout@v3
-    #- name: Clone Pico-ESP01-MP
-     # run: git clone https://github.com/heggiedavid/PIco-ESP01-MP.git
       
     - name: Clone Micropython
       run: git clone --recurse-submodules https://github.com/micropython/micropython.git
@@ -86,10 +84,6 @@ jobs:
       run: |
         cp $GITHUB_WORKSPACE/TPicoESPC3/TPicoESPC3.py $GITHUB_WORKSPACE/micropython/ports/rp2/modules/
 
-    #- name: Copy esp.py module
-     # run: |
-      #  cp "$GITHUB_WORKSPACE/PIco-ESP01-MP/esp.py" $GITHUB_WORKSPACE/micropython/ports/rp2/modules/
-    
     - name: Install dependencies
       run: |
        sudo apt-get update
@@ -119,5 +113,5 @@ jobs:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         prerelease: false
         automatic_release_tag: ${{ env.TAG_NAME }} 
-        title: "MicroPython + ST7789 Display Driver Release for version ${{ env.TAG_NAME }}"
+        title: "MicroPython + ST7789 Display Driver for LilyGo T-PicoC3 Display Release for version ${{ env.TAG_NAME }}"
         files: ./artifacts/*
