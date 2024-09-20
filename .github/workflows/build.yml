@@ -1,4 +1,4 @@
-name: T-Display-Pico C3
+name: T-PicoC3 Display
 
 permissions:
   contents: write
@@ -18,7 +18,7 @@ jobs:
 
     steps:
     - name: Clone repo
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       
     - name: Clone Micropython
       run: git clone --recurse-submodules https://github.com/micropython/micropython.git
@@ -31,7 +31,6 @@ jobs:
 
     - name: Copy tdt_config and some fonts like frozen modules
       run: |
-       ls -R $GITHUB_WORKSPACE/st7789_mpy/
        cp "$GITHUB_WORKSPACE/st7789_mpy/examples/configs/t-picoc3/tft_config.py" "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
        cp "$GITHUB_WORKSPACE/st7789_mpy/examples/configs/tdisplay_rp2040/tft_buttons.py" "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
        cp $GITHUB_WORKSPACE/st7789_mpy/examples/chango/chango_16.py "$GITHUB_WORKSPACE/micropython/ports/rp2/modules/"
@@ -101,7 +100,7 @@ jobs:
     - name: Move .uf2 files to artifacts
       run: |
         mkdir -p ./artifacts
-        cp micropython/ports/rp2/build-RPI_PICO/*.uf2 ./artifacts/RP2040.uf2
+        cp micropython/ports/rp2/build-RPI_PICO/*.uf2 ./artifacts/T-PicoC3.uf2
             
     - name: Generate Tag
       id: tag
