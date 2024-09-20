@@ -1,6 +1,6 @@
-# T-Display PICO C3 ESP32 MicroPython
+# T-PICOC3 ESP32 Display MicroPython
 
-
+---
 
 ### Install dependencies:
 
@@ -52,6 +52,8 @@ Please use the examples located in the [examples folder of the st7789_mpy reposi
 
 #### The results will be in:
 ``micropython/ports/rp2/build-RPI_PICO/firmare.uf2``
+
+---
 
 #### Examples:
 Please use the examples located in the [examples folder of the st7789_mpy repository](https://github.com/russhughes/st7789_mpy/tree/master/examples)
@@ -135,28 +137,44 @@ Please use the examples located in the [examples folder of the st7789_mpy reposi
 14. **Get APs Multiscroll:**
     - Scan networks around showing all details given by ``AT+CWLAP`` and scroll the data all together.
 
+---
+
 ## Docs:
 ## Get Latest Raspberry Pi Pico-Series C/C++ SDK:
   [![C SDK](/doc/cover/rp2_C_SDK.png)](https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-c-sdk.pdf)
 
+---
+
 ## Get Latest Raspberry Pi Pico-Series Python SDK:
   [![Python SDK](/doc/cover/rp2_Python_SDK.png)](https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-python-sdk.pdf)
 
+---
+
 ## Get Latest ESP32 C3 Technical Reference Manual EN:
   [![Technical Reference Manual EN](/doc/cover/esp32-c3_technical_reference_manual_en.png)](https://www.espressif.com/sites/default/files/documentation/esp32-c3_technical_reference_manual_en.pdf)
-  
+
+---  
+
 ## ESP32 C3 Wireless Adventure
   [![ESP32 C3 Wireless Adventure](/doc/cover/ESP32_C3_Wireless_Adventure.png)](https://www.espressif.com/sites/default/files/documentation/ESP32-C3%20Wireless%20Adventure.pdf)
+
+---
 
 ## Get Started with Micropython:
   [![Get Started with Micropython](/doc/cover/Started_Guide.png)](https://hackspace.raspberrypi.com/books/micropython-pico)
 
+---
+
 ## MicroPython Documentation:
   **Raspberry Pi Pico**
+  
   [![MicroPython RP2 Doc](/doc/cover/MicroPython_RP2.jpg)](https://docs.micropython.org/en/latest/rp2/quickref.html)
 
   **ESP32 C3**
+  
   [![MicroPython ESP32 Doc](doc/cover/MicroPython_ESP32.png)](https://docs.micropython.org/en/latest/esp32/quickref.html)
+
+---
 
 ## ESP32 C3 AT Doc:
   [![ESP32 C3 AT Doc](/doc/cover/AT.png)](https://docs.espressif.com/projects/esp-at/en/latest/esp32c3/)
