@@ -20,6 +20,22 @@ jobs:
     - name: Clone Micropython
       run: git clone --recurse-submodules https://github.com/micropython/micropython.git
 
+    - name: Cache MicroPython builds
+      uses: actions/cache@v4.2.4
+      with:
+        path: |
+          micropython/mpy-cross/mpy-cross
+          micropython/ports/rp2/build-*
+        key: micropython-${{ hashFiles('micropython/py/mpconfig.h', 'micropython/ports/rp2/**') }}
+        restore-keys: |
+          micropython-
+
+    - name: Setup Python
+      uses: actions/setup-python@v5.6.0
+      with:
+        python-version: "3.x"
+        cache: "pip"
+        
     - name: Clone st7789_mpy
       run: git clone https://github.com/russhughes/st7789_mpy.git
 
@@ -83,7 +99,8 @@ jobs:
     - name: Install dependencies
       run: |
        sudo apt-get update
-       sudo apt-get install -y gcc-arm-none-eabi libssl-dev python3 python3-pip python3-venv build-essential libffi-dev git pkg-config
+       sudo apt-get install -y gcc-arm-none-eabi libssl-dev build-essential libffi-dev git pkg-config
+       pip install pyelftools
 
     - name: Build MicroPython for RP2040
       run: |
@@ -92,7 +109,7 @@ jobs:
         cd ports/rp2
         make USER_C_MODULES=$GITHUB_WORKSPACE/st7789_mpy/st7789/micropython.cmake
         make submodules
-        make
+        make -j$(nproc)
 
     - name: Move .uf2 files to artifacts
       run: |
@@ -146,10 +163,10 @@ jobs:
         fi
 
     - name: GH Release
-      uses: softprops/action-gh-release@v2.0.8
+      uses: softprops/action-gh-release@v2.3.2
       with:
         tag_name: ${{ env.TAG_NAME }}
-        name: "MicroPython + ST7789 Display Driver for LilyGo T-PicoC3 Display Release version ${{ env.MPY_VERSION }} (Build ${{ env.TAG_NAME }})"
+        name: "MicroPython + ST7789 Display Driver for LilyGo T-PicoC3 Display Side RP2040 Release version ${{ env.MPY_VERSION }} (Build ${{ env.TAG_NAME }})"
         body: |
           Automated release for MicroPython.
           ## How to Flash the Firmware
