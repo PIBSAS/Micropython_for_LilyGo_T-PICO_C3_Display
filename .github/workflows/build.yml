@@ -21,7 +21,7 @@ jobs:
       run: git clone --recurse-submodules https://github.com/micropython/micropython.git
 
     - name: Cache MicroPython builds
-      uses: actions/cache@v4.2.4
+      uses: actions/cache@v4.3.0
       with:
         path: |
           micropython/mpy-cross/mpy-cross
