@@ -7,8 +7,8 @@ on:
   push:
     tags:
      - 'v*'
- # schedule:
-  #   - cron: '0 0 1 * *'
+  schedule:
+     - cron: '0 0 1 */2 *'
   
   workflow_dispatch:
 
@@ -21,7 +21,7 @@ jobs:
       run: git clone --depth 1 --recursive https://github.com/micropython/micropython.git
 
     - name: Setup Python
-      uses: actions/setup-python@v6
+      uses: actions/setup-python@v7
       with:
         python-version: "3.x"
         cache: "pip"
